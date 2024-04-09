@@ -403,9 +403,16 @@ span {
   line-height: normal;
   padding-top: -10px;
 }
+.menu__btn {
+  display: none;
+  background-image: url(../images/burger1.jpg);
+  background-position: center center;
+}
+
 @media (max-width: 1366px) {
   .logo__img {
     max-width: 50%;
+    padding-top: 0;
   }
   .header__menu-item {
     font-size: 24px;
@@ -416,9 +423,8 @@ span {
     gap: 50px;
     justify-items: center;
   }
-  .heroes__inner{
+  .heroes__inner {
     flex-wrap: wrap;
-
   }
 }
 @media (max-width: 1100px) {
@@ -440,11 +446,12 @@ span {
   .trailer__title-top {
     padding-top: 100px;
   }
-  .heroes__inner{
+  .heroes__inner {
     justify-content: center;
-
   }
-      
+  .heroes__slider-text {
+    max-width: 80%;
+  }
 }
 @media (max-width: 840px) {
   .season__inner {
@@ -452,10 +459,24 @@ span {
     gap: 70px;
     justify-items: center;
   }
+  .heroes__slider-img {
+    max-width: 100%;
+  }
 }
 @media (max-width: 640px) {
   .header__menu {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    transform: translateY(-130%);
+    transition: all 0.3s ease;
+  }
+  .header__menu.header__menu--active {
+    transform: translateY(0);
+  }
+  .logo {
+    padding-top: 0;
+    margin-top: -200px;
   }
   .trailer__title-top {
     font-size: 50px;
@@ -481,4 +502,17 @@ span {
   .season__item {
     width: 300px;
     height: 200px;
+  }
+  .menu__btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    max-width: px;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  .menu__btn.header__btn--active {
+    background-image: url(../images/burger2.jpg);
+  }
 }
